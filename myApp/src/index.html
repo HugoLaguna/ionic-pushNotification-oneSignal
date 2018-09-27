@@ -9,11 +9,13 @@
 
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
   <meta name="theme-color" content="#4e8ef7">
 
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="assets/imgs/brow.png">
 
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
@@ -24,6 +26,14 @@
         .then(() => console.log('service worker installed'))
         .catch(err => console.error('Error', err));
     }
+  </script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "6c523749-26f1-4212-9926-4b580b5ba700",
+      });
+    });
   </script>
 
   <link href="build/main.css" rel="stylesheet">
